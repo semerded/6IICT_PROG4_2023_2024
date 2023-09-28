@@ -1,7 +1,7 @@
 # Pas de URL aan zoals aangegeven in de verschillende niveau's.
 import requests
 
-url = "https://v2.jokeapi.dev/joke/Programming?safe-mode"
+url = "https://v2.jokeapi.dev/joke/Dark"
 response_json = requests.get(url).json() # Haal JSON uit response.
 
 # Bepaal of de grap uit 1 of 2 delen bestaat.
