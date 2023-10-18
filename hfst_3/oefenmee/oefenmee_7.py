@@ -8,7 +8,7 @@ app = tk.Tk()
 
 # Functie maakt & plaatst een label.
 def maak_label():
-    label = tk.Label(master=app, text="Goed gedaan!")
+    label = tk.Button(master=app, text="Klik op mij!", command=maak_label)
     label.pack()
 
 # 1) Knop aanmaken.
