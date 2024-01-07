@@ -1,7 +1,7 @@
 # Maak een klasse Rechthoek & Vierkant zoals aangegeven in opdracht 13.
 
 " Via onderstaande code kan je niveau 1 testen. "
-# r_1 = Rechthoek(1,1 , 2,4)
+# r_1 = Rechthoek(1,1 , 2,4) # Volgorde parameters: (x,y  ,  breedte,hoogte)
 # r_2 = Rechthoek(7,9 , 8,5)
 
 # print( r_1.get_oppervlakte() ) # 8
