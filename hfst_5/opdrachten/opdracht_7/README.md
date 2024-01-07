@@ -5,22 +5,22 @@ In deze opdracht maken jullie een Particle Storm. Dit is een simulatie die een a
   <img src="media/firestorm_version82_120fps.gif" width="300" height="300"/>
 </p>
 
-Jullie zullen dit niet in een keer ontwikkelen. Bij het ontwikkelen van (grotere) applicaties is het namelijk best om klein te beginnen. Vervolgens kan je de applicatie steeds verder uitbreiden. Jullie zullen starten met een basisimplementatie (versie 1). Na deze basis, zullen jullie de Particle Storm verder verbeteren en uitbreiden. Het is niet verplicht om iedere versie te maken. Probeer er echter zo veel mogelijk te doen! Voor iedere versie zijn er instructies voorzien in deze README. Opgelet, de README vertelt je wat te doen, niet hoe. Experimenteren is dus noodzakelijk. Er zijn in totaal 8 versies. Probeer zo ver mogelijk te raken!
+Jullie zullen dit niet in een keer ontwikkelen. Bij het ontwikkelen van (grotere) applicaties is het namelijk best om klein te beginnen. Vervolgens kan je de applicatie steeds verder uitbreiden. Jullie zullen starten met een basisimplementatie (versie 1). Na deze basis, zullen jullie de Particle Storm verder verbeteren en uitbreiden. Voor iedere versie zijn er instructies voorzien in deze README. Opgelet, de README vertelt je wat te doen, niet hoe. Experimenteren is dus noodzakelijk. Er zijn in totaal 8 versies. Probeer zo ver mogelijk te raken!
 
 ### Tip
 Iedere versie bouwt verder op de vorige. Je zal constant code moeten wijzigen. Het is dan ook een goed idee om een kopie te maken van de laatste stabiele versie. Zo kan je altijd teruggaan, mocht dit nodig zijn.
 
 ## Basis implementatie (versie 1)
 Je hebt 2 bestanden gekregen om mee te starten.
-* `particle.py`: bevat de klasse **BoringParticle**, waarmee alle object partikels gemaakt worden. Dit bestand is momenteel nog nagenoeg leeg. Je zal zelf moeten bepalen welke eigenschappen/methoden noodzakelijk zijn.
+* `particle.py`: bevat de klasse **BoringParticle**, waarmee alle partikel-objecten gemaakt zullen worden. Dit bestand is momenteel nog nagenoeg leeg. Je zal zelf moeten bepalen welke eigenschappen/methoden noodzakelijk zijn.
 * `particle_storm.py`: bevat de pygame applicatie. Dit bestand is compleet, behalve op 2 plekken (zie *TODO*). Je zal de code aanvullen op basis van de zelfgemaakte klasse **BoringParticle** in `particle.py`.
 
-Op het einde van deze versie moet `particle_storm.py` uitvoeren, dit resultaat geven. Je hebt een aantal partikels die met een vaste snelheid een willekeurige richting uitgaan. Eenmaal de rand bereikt is, reset het partikel terug naar het midden. Het zal nu een nieuwe willekeurige richting uitgaan.
+Op het einde van deze versie moet `particle_storm.py` uitvoeren, dit resultaat geven. Je hebt een aantal partikels die met een **vaste snelheid** een **willekeurige richting** uitgaan. Eenmaal de rand bereikt is, reset het partikel terug naar het midden. Het zal nu een nieuwe willekeurige richting uitgaan.
 <p align="center">
   <img src="media/firestorm_versie1_120fps.gif" width="300" height="300"/>
 </p>
 
-Allereerst moet je bepalen wat de eigenschappen/methoden van **BoringParticle** worden. Maak hiervoor gebruik van bovenstaande uitleg, de *TODO* in `particle_storm.py` en het stappenplan uit oefen mee 8.
+Allereerst moet je bepalen wat de eigenschappen/methoden van **BoringParticle** worden. Maak hiervoor gebruik van bovenstaande uitleg, de *TODO* in `particle_storm.py` en het stappenplan uit oefen mee 8. Alvast een kleine hint: ieder partikel moet getekend worden op een 2D-vlak, en iedere loop moet deze positie een beetje wijzigen.
 
 ### Tip
 Het is eenvoudiger om de positie van een partikel tussen 0 en 1 te laten varieren. 
@@ -111,7 +111,7 @@ Partikels van SpinningParticle zullen met de klok meedraaien terwijl ze bewegen.
 
 De kleur moet veranderen, naargelang ze bewegen. Bijvoorbeeld rood (255,0,0) als het partikel puur horizontaal beweegt & blauw (0,0,255) wanneer verticaal. Indien de beweging zowel horizontaal als verticaal is, moet de kleur een mengeling tussen rood & blauw zijn.
 
-Het resultaat ziet er als volgt uit. Alle andere partikels zijn in het voorbeeld links weggelaten.
+Het resultaat ziet er als volgt uit. Alle andere partikels zijn in het voorbeeld links weggelaten. Het voorbeeld rechts toont de 3 soorten partikels samen.
 <p align="center">
   <img src="media/firestorm_version61_120fps.gif" width="300" height="300"/>
   <img src="media/firestorn_version62_120fps.gif" width="300" height="300"/>
@@ -125,7 +125,7 @@ Bekijk onderstaande figuur. Jullie gebruiken momenteel de rode en blauwe pijl om
   <img src="media/afstand_bepalen.png" width="150" height="150"/>
 </p>
 
-Je kan dan de snelheid in de x- en y-richting nu bepalen met goniometrie. Deze hoek moet een willekeurig getal zijn tussen 0 en 2*π.
+Je kan dan de snelheid in de x- en y-richting nu bepalen met goniometrie. Deze hoek moet een willekeurig getal zijn tussen 0 en 2*π. Door theta iedere loop lichtjes te verhogen, zal het partikel beginnen draaien.
 ```math
 v_x = v*cos(θ)
 v_y = v*sin(θ)
