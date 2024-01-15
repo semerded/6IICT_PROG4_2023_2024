@@ -1,10 +1,10 @@
 import pygame, globals, constants, math, random
 from colors import Colors
 
-
 class BaseParticle:
-    def __init__(self, speed: int) -> None:
+    def __init__(self, speed: int, color: globals.RGBcolor) -> None:
         self.speedMultiplier = speed
+        self.color = color
         self._constructor()
         
     def _constructor(self):
@@ -17,7 +17,7 @@ class BaseParticle:
             
     def basePlace(self):
         self.update()
-        pygame.draw.circle(globals.display, Colors.WHITE, self.currentPostition, 10)
+        pygame.draw.circle(globals.display, self.color, self.currentPostition, 10)
 
     def update(self):
         """
@@ -47,3 +47,6 @@ class BaseParticle:
         
     def changeSpeed(self, newSpeed: int):
         self.speed = newSpeed
+        
+    def changeColor(self, newColor: globals.RGBcolor):
+        self.color = newColor

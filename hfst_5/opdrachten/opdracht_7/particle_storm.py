@@ -10,7 +10,7 @@ pygame.init()
 pygame.display.set_caption("Fire Storm Simulation")
 clock = pygame.time.Clock()
 
-particles = ParticleHolder(30, 5)
+particles = ParticleHolder(50, 8)
 
     
 running = True
