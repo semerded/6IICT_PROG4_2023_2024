@@ -8,7 +8,7 @@ class BoringParticle:
         self._constructor()
         
     def _constructor(self):
-        self.speed = random.random()* 100 * self.speedMultiplier
+        self.speed = random.random() * self.speedMultiplier * 100 / constants.FPS
         self.angle = random.random()* 360
         self.previousAngle = self.angle
         self._calculateAngle()
@@ -27,8 +27,8 @@ class BoringParticle:
             self._calculateAngle()
         
         self._checkForOutOfBounds()
-        self.currentPostition[0] += self.xMovement / constants.FPS
-        self.currentPostition[1] += self.yMovement / constants.FPS
+        self.currentPostition[0] += self.xMovement
+        self.currentPostition[1] += self.yMovement
         
     def _calculateAngle(self):
         self.xMovement = self.speed * math.cos(self.angle)
