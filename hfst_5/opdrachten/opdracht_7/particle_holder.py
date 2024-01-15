@@ -1,5 +1,6 @@
 from colors import Colors
-from particle import BoringParticle
+from particles.boring_particle import BoringParticle
+from particles.bouncing_particle import BouncingParticle
 
 class ParticleHolder:
     def __init__(self, amountOfParticles: int, speed: int) -> None:
@@ -9,7 +10,7 @@ class ParticleHolder:
             self.particleList.append(self._particleBuilder())
         
     def _particleBuilder(self) -> BoringParticle:
-        return BoringParticle(self.speed)
+        return BouncingParticle(self.speed)
         
     def place(self):
         for particle in self.particleList:
