@@ -9,6 +9,8 @@ class BaseParticle:
         
     def _constructor(self):
         self.speed = random.random() * self.speedMultiplier * 100 / constants.FPS
+        if self.speed < self.speedMultiplier / 5:
+            self.speed = self.speedMultiplier / 5
         self.angle = random.random()* 360
         self.previousAngle = self.angle
         self._calculateAngle()
@@ -35,7 +37,7 @@ class BaseParticle:
         
     def checkForOutOfBounds(self):
         for position in self.currentPostition:
-            if position < -5 or position > constants.BREEDTE + 5: # 10 pixel tollerance
+            if position < -10 or position > constants.BREEDTE + 10: # 10 pixel tollerance
                 return True
         return False
               
