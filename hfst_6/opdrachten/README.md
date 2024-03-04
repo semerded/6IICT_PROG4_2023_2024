@@ -22,9 +22,9 @@ Een fractaal is een geometrische figuur, met patronen die zich herhalen op versc
   <img src="afbeeldingen/sneeuwvlok.png" width="200" height="200"/>
 </p>
 
-Omwille van de herhaling, kan je fractalen best recursief tekenen. We zullen dit aantonen in pygame. Voltooi de functie `recursieve_fractaal` in `opdracht_6.py`. Deze functie wordt in de functie `main` (reeds voltooid) gebruikt om een fractaal met een bepaalde **diepte** te tekenen. Het patroon zal zich een aantal keer herhalen gelijk aan deze **diepte**. Onderstaande figuur toont het resultaat met een **diepte** van respectievelijk 1, 2 en 3.
+Omwille van de herhaling, kan je fractalen best recursief tekenen. We zullen dit aantonen in pygame. Voltooi de functie `recursieve_fractaal` in `opdracht_6.py`. Deze functie wordt in de functie `main` (reeds voltooid) gebruikt om een fractaal met een bepaalde **max_diepte** te tekenen. Het patroon zal zich een aantal keer herhalen gelijk aan deze **max_diepte**. Onderstaande figuur toont het resultaat met een **max_diepte** van respectievelijk 1, 2 en 3.
 
-De functie moet stoppen wanneer het een **diepte** van 0 bereikt heeft. De fractaal ziet er als volgt uit (bij verschillende dieptes).
+De functie moet stoppen wanneer het de **max_diepte** bereikt heeft. De fractaal ziet er als volgt uit (bij verschillende max_dieptes).
 
 <style>
   .figure-container {
@@ -41,15 +41,15 @@ De functie moet stoppen wanneer het een **diepte** van 0 bereikt heeft. De fract
 <div class="figure-container">
   <figure class="figure">
     <img src="afbeeldingen/fractaal_1.png">
-    <figcaption>Diepte = 1</figcaption>
+    <figcaption>max_diepte = 1</figcaption>
   </figure>
   <figure class="figure">
     <img src="afbeeldingen/fractaal_2.png">
-    <figcaption>Diepte = 2</figcaption>
+    <figcaption>max_diepte = 2</figcaption>
   </figure>
   <figure class="figure">
     <img src="afbeeldingen/fractaal_3.png">
-    <figcaption>Diepte = 3</figcaption>
+    <figcaption>max_diepte = 3</figcaption>
   </figure>
 </div>
 
