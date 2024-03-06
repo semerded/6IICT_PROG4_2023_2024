@@ -1,4 +1,4 @@
-import pygame, globals, constants, math, random
+import pygame, globals, math, random
 from colors import Colors
 
 class BaseParticle:
@@ -8,18 +8,18 @@ class BaseParticle:
         self._constructor()
         
     def _constructor(self):
-        self.speed = random.random() * self.speedMultiplier * 100 / constants.FPS
+        self.speed = random.random() * self.speedMultiplier * 100 / globals.FPS
         if self.speed < self.speedMultiplier / 5:
             self.speed = self.speedMultiplier / 5
         self.angle = random.random()* 360
         self.previousAngle = self.angle
         self._calculateAngle()
         
-        self.currentPostition = [300, 300]
-            
+        self.currentPostition = [globals.appWidth / 2, globals.appHeight / 2]
+        
     def basePlace(self):
         self.update()
-        pygame.draw.circle(globals.display, self.color, self.currentPostition, 10)
+        self.placeOnScreen()
 
     def update(self):
         """
@@ -31,14 +31,18 @@ class BaseParticle:
         self.currentPostition[0] += self.xMovement
         self.currentPostition[1] += self.yMovement
         
+    def placeOnScreen(self):
+        pygame.draw.circle(globals.display, self.color, self.currentPostition, 10)
+            
     def _calculateAngle(self):
         self.xMovement = self.speed * math.cos(self.angle)
         self.yMovement = self.speed * math.sin(self.angle)
         
     def checkForOutOfBounds(self):
-        for position in self.currentPostition:
-            if position < -10 or position > constants.BREEDTE + 10: # 10 pixel tollerance
-                return True
+        if self.currentPostition[0] < -10 or self.currentPostition[0] > globals.appWidth + 10: # 10 pixel tollerance
+            return True
+        if self.currentPostition[1] < -10 or self.currentPostition[1] > globals.appHeight + 10:
+            return True
         return False
               
     def reset(self):

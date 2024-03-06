@@ -1,14 +1,17 @@
 from particles.base_particle import BaseParticle
-import globals, constants, random, math
+import globals, random, math
 
 class SpinningParticle(BaseParticle):
     def __init__(self, speed: int) -> None:
         super().__init__(speed, (255, 0,0))
         
     def place(self):
-        newAngle = self.angle + random.random() * self.speedMultiplier / constants.FPS
+        newAngle = self.angle + random.random() * self.speedMultiplier / globals.FPS
         if newAngle > 360:
             newAngle = 0
+            
+        if self.checkForOutOfBounds():
+            self.reset()
         self.changeAngle(newAngle)
         self.changeColor(self._calculateColor())
         self.basePlace()
