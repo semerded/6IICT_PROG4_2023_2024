@@ -13,7 +13,8 @@ Fractalen tekenen moet stoppen na een bepaalde max_diepte te bereiken.
 De diepte begint best bij 0 en verhoogd met 1, telkens wanneer je een kleinere fractaal tekent.
 """
 def recursieve_fractaal(x, y, breedte, hoogte, max_diepte, huidige_diepte, scherm):
-    pass
+    
+    recursieve_fractaal(x, y)
 
  
 """ Teken een H op een bepaalde positie (x,y) & een bepaalde grootte (breedte,hoogte). """

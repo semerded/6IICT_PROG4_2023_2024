@@ -1,11 +1,10 @@
 # Los de vragen uit oefen mee 2 op.
 
-def optellen(getal):
-    if getal == 1:
+def optellen(eindGetal, getal = 1):
+    if getal == eindGetal:
         print(getal)
         return
-    
-    optellen(getal-1)
+    optellen(eindGetal, getal + 1)
     print(getal)
 
 optellen(3)
